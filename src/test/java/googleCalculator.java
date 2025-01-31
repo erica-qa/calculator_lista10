@@ -51,8 +51,9 @@ public class googleCalculator {
   }
 
   @AfterEach
-  public void tearDown() {
+  public void tearDown() throws InterruptedException {
     driver.quit();
+    Thread.sleep(8000);
   }
 
   @Test
@@ -113,7 +114,7 @@ public class googleCalculator {
   @Order(3)
   public void multiplicarTest() throws InterruptedException {
 
-    String resultadoEsperadoMult = "13,8";
+    String resultadoEsperadoMult = "13.8";
 
     var btn1 = driver.findElement(AppiumBy.id("com.google.android.calculator:id/digit_3"));
     btn1.click();
